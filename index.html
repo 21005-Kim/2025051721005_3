@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>프리패스</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 3rem 2rem 2rem;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #ffe5ec, #ffcdd2, #ffebee);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .wrapper {
+      width: 900px;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px 15px 25px 25px;
+      border-top: 15px solid #d32f2f;
+      border-bottom: 15px solid #d32f2f;
+      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    }
+
+    .title-box {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #d32f2f;
+      padding: 0.6rem 2rem;
+      border-radius: 12px;
+      font-size: 2.8rem;
+      color: white;
+      font-family: 'Black Han Sans', sans-serif;
+      z-index: 10;
+      white-space: nowrap;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    header {
+      background-color: #e0e0e0;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ff5252, #304ffe);
+      border: 2px solid #c62828;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 2.4rem;
+      color: #444;
+      letter-spacing: 1px;
+    }
+
+    .ad-area {
+      background: #ffe6e6;
+      border: 2px dashed #d32f2f;
+      padding: 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #b71c1c;
+      box-shadow: 0 0 10px rgba(211, 47, 47, 0.2);
+    }
+
+    .ad-area img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    form {
+      background: #fff;
+      border: 2px solid #d32f2f;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1.5px solid #d32f2f;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.8rem;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .post {
+      background: white;
+      border: 2px solid #d32f2f;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .post h3 {
+      margin: 0 0 0.5rem;
+      color: #b71c1c;
+      font-size: 1.5rem;
+    }
+
+    .post p {
+      margin: 0.5rem 0 1rem;
+      color: #333;
+    }
+
+    .comments {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #d32f2f;
+    }
+
+    .comment {
+      margin-bottom: 0.8rem;
+      padding-left: 1rem;
+      border-left: 4px solid #d32f2f;
+      color: #444;
+    }
+
+    .comment-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .comment-form input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1.5px solid #d32f2f;
+      border-radius: 6px;
+    }
+
+    .comment-form button {
+      padding: 0.5rem 1rem;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title-box">프리패스</div>
+    <header>
+      <div class="logo"></div>
+      <h1>프리패스</h1>
+    </header>
+
+    <div class="ad-area">
+      <img src="https://cdn-icons-png.flaticon.com/512/610/610420.png" alt="약 이미지" />
+      <span>🔥 <strong>키성장 지리는 약</strong> - 하루 두 알로 인생 역전! 이젠 머리 위로 세상을 봐라!</span>
+    </div>
+
+    <form id="postForm">
+      <input type="text" id="postTitle" placeholder="제목을 입력하세요" required />
+      <textarea id="postContent" rows="4" placeholder="내용을 입력하세요" required></textarea>
+      <button type="submit">글 작성</button>
+    </form>
+
+    <section id="posts"></section>
+  </div>
+
+  <script>
+    const postForm = document.getElementById('postForm');
+    const postsSection = document.getElementById('posts');
+
+    function loadPosts() {
+      const saved = JSON.parse(localStorage.getItem('posts') || '[]');
+      postsSection.innerHTML = '';
+      saved.forEach((post, i) => {
+        renderPost(post.title, post.content, post.comments || [], i);
+      });
+    }
+
+    function renderPost(title, content, comments = [], index) {
+      const post = document.createElement('div');
+      post.className = 'post';
+      post.innerHTML = `
+        <h3>${title}</h3>
+        <p>${content}</p>
+        <div class="comments">${comments.map(c => `<div class="comment">${c}</div>`).join('')}</div>
+      `;
+      const form = document.createElement('form');
+      form.className = 'comment-form';
+      form.innerHTML = `
+        <input type="text" placeholder="댓글 작성..." required>
+        <button type="submit">등록</button>
+      `;
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const comment = form.querySelector('input').value.trim();
+        if (!comment) return;
+        const saved = JSON.parse(localStorage.getItem('posts') || '[]');
+        saved[index].comments.push(comment);
+        localStorage.setItem('posts', JSON.stringify(saved));
+        loadPosts();
+      });
+      post.querySelector('.comments').appendChild(form);
+      postsSection.appendChild(post);
+    }
+
+    postForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const title = document.getElementById('postTitle').value.trim();
+      const content = document.getElementById('postContent').value.trim();
+      if (!title || !content) return alert('제목과 내용을 입력하세요.');
+      const posts = JSON.parse(localStorage.getItem('posts') || '[]');
+      posts.push({ title, content, comments: [] });
+      localStorage.setItem('posts', JSON.stringify(posts));
+      postForm.reset();
+      loadPosts();
+    });
+
+    loadPosts();
+  </script>
+</body>
+</html>
